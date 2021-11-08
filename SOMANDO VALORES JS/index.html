@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX: SOMANDO NÚMEROS</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        body{
+            background-color: rgba(0, 125, 255, 0.900);
+        }
+        header{
+            text-align: center;
+        }
+
+        section{
+            background-color: white;
+            text-align: center;    
+
+            width: 350px;
+
+            margin: auto;
+            padding: 20px;
+            padding-top: 2px;
+
+            border-radius: 20px;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.500);
+            
+        }
+
+        footer{
+            text-align: center;
+        }
+
+        div#dados{
+            padding-bottom: 10px;
+        }
+
+        div#res{
+            padding-top: 5px;
+        }
+
+        input#txtn1{
+            width: 100px;
+        }
+
+        input#txtn2{
+            width: 100px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>EVENTOS DOM:</h1>
+        <hr>
+    </header>
+    
+    <section>
+        <div id="dados">
+            <h2>SOMANDO NÚMEROS</h2>
+            <input type="number" name="txtn1" id="txtn1"> +
+            <input type="number" name="txtn2" id="txtn2">
+            <input type="button" value="Somar" onclick="somar()">
+        </div>
+        
+        <hr>
+        
+        <div id="res">
+            Por favor, entre com os dados a cima
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; <em>somandonumeros</em></p>
+    </footer>
+
+    <script>
+    function somar(){
+        
+        //1º)Criar as variáveis das ID's:
+        var tn1 = window.document.getElementById("txtn1");
+        var tn2 = window.document.getElementById("txtn2");
+        var res = window.document.getElementById("res");
+        
+        //2º)Criar as variáveis dos VALORES:
+        var n1 = Number(tn1.value);
+        var n2 = Number(tn2.value);
+        var s = n1 + n2; 
+        
+        //res.innerHTML = s; 
+        //Ou:
+        res.innerHTML = `A soma entre ${n1} e ${n2} é igual a: <strong>${s}</strong>`; 
+    }
+
+
+
+    </script>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
