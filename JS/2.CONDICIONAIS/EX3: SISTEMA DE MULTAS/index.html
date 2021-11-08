@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX3: SISTEMA DE MULTAS</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>CONDICIONAIS EM JS:</h1>
+        <hr>
+    </header>
+
+    <section>
+        <div id="dados">
+            <h1>Sistema de Multas</h1>
+            <p>Velocidade do veículo: <input type="number" name="txtvel" id="txtvel"> Km/h</p>
+            <input type="button" value="Verificar" onclick="verificar()">
+        </div>
+        <hr>
+        <div id="res">
+            <br><p>Por favor, entre com o valor da velocidade</p> 
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; <em>sistemademultas</em></p>
+    </footer>
+
+    <!--SCRIPT RASCUNHO:-->
+    <script>
+        //1º)CRIAR AS VARIÁVEl DAS ID'S:
+        //2º)CRIAR AS VARIÁVEL DOS VALORES:
+        //3º)CRIAR AS FUNÇÕES:
+
+        function verificar(){
+            var txtvel = window.document.getElementById("txtvel");
+            var res = window.document.getElementById("res")
+            
+            var vel = Number(txtvel.value);    
+            res.innerHTML = `<p>A velocidade do seu veículo é de <strong>${vel} Km/h</strong></p>`
+                if(vel < 60){
+                    res.innerHTML += ``
+                } else {
+                    res.innerHTML += "<p>Você será <strong>MULTADO</strong> Por excesso de velocidade!</p>"
+                }
+                res.innerHTML += `<p>Dirija sempre com cinto de segurança!</p>`
+            
+
+        }
+
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
