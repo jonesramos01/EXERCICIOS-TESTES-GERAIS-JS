@@ -1,0 +1,41 @@
+body{
+    background-color: rgba(0, 125, 255, 0.900);
+}
+header{
+    text-align: center;
+}
+
+section{
+    background-color: white;
+    text-align: center;    
+
+    width: 350px;
+
+    margin: auto;
+    padding: 20px;
+    padding-top: 2px;
+
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.500);
+    
+}
+
+footer{
+    text-align: center;
+}
+
+div#dados{
+    padding-bottom: 10px;
+}
+
+div#res{
+    padding-top: 5px;
+}
+
+input#txtn1{
+    width: 100px;
+}
+
+input#txtn2{
+    width: 100px;
+}
