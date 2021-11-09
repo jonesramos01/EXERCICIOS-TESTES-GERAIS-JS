@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISTEMA VERIFICADOR DE ESTRANGEIRO</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>CONDICIONAIS EM JS:</h1>
+        <hr>
+    </header>
+
+    <section>
+        <div id="dados">
+            <h1>SISTEMA VERIFICADOR DE ESTRANGEIRO</h1>
+           <p> País: <input type="text" name="txtpais" id="txtpais"></p> 
+           <p><input type="button" value="Verificar" onclick="verificar()"></p> 
+        </div>
+        <hr>
+        <div id="res">
+            <p>Por favor, entre com o nome do país</p> 
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; <em>sistemaverificadordeestrangeiro</em> </p>
+    </footer>
+
+    <!--SCRIPT RASCUNHO:-->
+<!--    
+    <script>
+        //1º)CRIAR AS VARIÁVEIS DAS ID'S
+        //2º)CRIAR AS VARIÁVEIS DOS VALORES
+        //3º)CRIAR AS FUNÇÕES
+
+        function verificar(){
+            var txtpais = window.document.getElementById("txtpais");
+            var res = window.document.getElementById("res");
+            var pais = txtpais.value;
+            res.innerHTML = `<p>O seu país é ${pais}</p>`;
+
+            if(pais == "Brasil" || pais == "brasil" || pais == "BRA"){
+                res.innerHTML += `<p>Você é brasileiro!</p>`;
+            } else {
+                res.innerHTML += `<p>Você é estrangeiro!</p>`;
+            }
+        }
+
+    </script>
+-->    
+
+
+    <script src="script.js"></script>
+</body>
+</html>
