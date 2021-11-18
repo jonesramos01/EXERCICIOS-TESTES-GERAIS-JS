@@ -1,0 +1,40 @@
+body{
+    background-color: rgba(0, 125, 255, 0.900);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+header{
+    color: white;
+}
+
+section{
+    background-color: white;
+
+    width: 500px;
+    height: 400px;
+
+    /*line-height: ;*/
+
+    margin: auto;
+    padding: 20px;
+
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.500);
+    
+}
+
+footer{
+    color: white;
+}
+
+div#dados{
+    /*line-height: ;*/
+
+}
+
+div#res{
+    /*line-height: ;*/
+
+}

@@ -6,51 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HORA DO DIA</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <style>
-        body{
-            background-color: rgba(0, 125, 255, 0.900);
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 16px;
-            text-align: center;
-        }
-
-        header{
-            color: white;
-        }
-
-        section{
-            background-color: white;
-
-            width: 500px;
-            height: 500px;
-
-            /*line-height: ;*/
-
-            margin: auto;
-            padding: 20px;
-
-            border-radius: 15px;
-            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.500);
-            
-        }
-
-        footer{
-            color: white;
-        }
-
-        div#dados{
-            /*line-height: ;*/
-
-        }
-
-        div#res{
-            /*line-height: ;*/
-
-        }
-
-    </style>
 </head>
-<body>
+<body onload="carregar()">
     <header>
         <div id="head">
             <h1>HORA DO DIA:</h1>
@@ -58,17 +15,27 @@
     </header>
 
     <section>
-        <div id="dados">
-            "Dados:"
-            <img src="" alt="manha" id="m">
-            <img src="" alt="tarde" id="t">
-            <img src="" alt="noite" id="n">
+        <div id="msg">
+            "Mensagem..."
         </div>
+        
         <hr>
-        <div id="res">
-            "Aqui é o resultado:"
+
+        <div id="dados">
+            <p>
+                <img src="assets/bom-dia.jpg" alt="foto do dia" id="img" width="150px" >
+            </p>
+           
+            <!--
+            <p>
+                <img src="assets/boa-tarde.jpg" alt="tarde" id="tarde" width="150px">
+            </p>
+            <p>
+                <img src="assets/boa-noite.jpg" alt="noite" id="noite" width="150px">
+            </p>
+            -->
             
-        </div>
+        </div> 
 
     </section>
 
@@ -80,6 +47,31 @@
 
     <!--ÁREA DE SCRIPT:-->
     <script>
+
+        
+
+        
+
+        function carregar(){
+            var msg = window.document.getElementById("msg");
+            var img = window.document.getElementById("img");
+            
+            var atual = new Date();
+            var hora = atual.getHours();
+
+            msg.innerHTML = `São exatamente ${hora} horas.`;
+            
+            if (hora == 24 || hora >= 0 && hora <= 12){
+                //BOM DIA:
+                
+            } else if (hora > 12 && hora < 18){
+                //BOA TARDE:
+
+            } else if (hora >= 18 && hora < 24 ) {
+                //BOA TARDE:
+
+            }
+        }
 
 
 
