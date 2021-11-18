@@ -12,8 +12,8 @@ header{
 section{
     background-color: white;
 
-    width: 500px;
-    height: 400px;
+    width: 350px;
+    height: 250px;
 
     /*line-height: ;*/
 
@@ -22,6 +22,8 @@ section{
 
     border-radius: 15px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.500);
+
+    line-height: 15px;
     
 }
 
