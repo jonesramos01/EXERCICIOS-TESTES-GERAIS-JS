@@ -23,7 +23,7 @@
             background-color: white;
 
             width: 450px;
-            height: 400px;
+            height: 450px;
 
             margin: auto;
             padding: 15px;
@@ -48,17 +48,26 @@
 
     <section>
         <div id="dados">
-            Ano de Nascimento: <input type="number" name="txtnum" id="txtnum"> <br>
-            Sexo: <input type="" name="" id=""> <br>
-            <input type="button" value="Verificar">
+            <p>Ano de Nascimento: 
+                <input type="number" name="txtano" id="txtano">
+            </p>
+
+            <p>Sexo: 
+                <input type="radio" name="radsex" id="masc" checked>
+                <label for="masc">Masculino</label>
+
+                <input type="radio" name="radsex" id="fem">    
+                <label for="fem">Feminino</label>
+            </p>
+            <input type="button" value="Verificar" onclick="verificar()">
         </div>
 
         <div id="msg">
-            Mensagem...
+            Por favor, preencha os dados a cima!
         </div>
 
         <div id="img">
-            <img src="assets/homem-bebe.jpg" alt="homem-bebe" id="homem-bebe">
+            <!--<img src="assets/homem-bebe.jpg" alt="homem-bebe" id="homem-bebe">-->
         </div>
 
     </section>
@@ -69,7 +78,63 @@
     <!--ÁREA DE SCRIPT:-->
 <!-- -->    
     <script>
+        function verificar(){
+            //alert("Função verificar ok!"); //Testar botão
 
+            //DATA ATUAL:
+            var dataAtual = new Date();
+            var anoAtual = dataAtual.getFullYear();
+
+            //DATA DO FORMULÁRIO:
+            var anoForm = window.document.getElementById("txtano");
+
+            //MENSAGEM (RESULTADO):
+            var msg = window.document.getElementById("msg");
+
+            //IMAGEM EM JS:
+            var img = window.document.createElement("img");
+            img.setAttribute("id", "foto")
+
+            if(anoForm.value.length == 0 || Number(anoForm.value) > anoAtual){
+                window.alert("[ERRO] Verifique os dados e tente novamente!");
+            } else {
+                var sexForm = window.document.getElementsByName("radsex");
+                var idade = anoAtual - Number(anoForm.value);
+                //msg.innerHTML = `Idade calculada: ${idade}`; //Teste cálculo
+
+                var genero = "";
+                if(sexForm[0].checked){
+                    genero = "Homem";
+
+                    if(idade >= 0 && idade < 10){
+                        //Criança:
+                    } else if(idade < 21){
+                        //Jovem:
+                    } else if(idade < 60){
+                        //Adulto:
+                    } else {
+                        //Idoso:
+                    }
+
+
+                } else if(sexForm[1].checked) {
+                    genero = "Mulher";
+
+                    if(idade >= 0 && idade < 10){
+                        //Criança:
+                    } else if(idade < 21){
+                        //Jovem:
+                    } else if(idade < 60){
+                        //Adulto:
+                    } else {
+                        //Idoso:
+                    }
+
+                }
+                msg.innerHTML = `Detectado ${genero} de ${idade} anos.`;
+
+            }
+        }
 
 
     </script>
