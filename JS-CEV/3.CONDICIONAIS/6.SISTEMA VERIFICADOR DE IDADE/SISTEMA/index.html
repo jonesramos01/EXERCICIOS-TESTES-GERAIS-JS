@@ -91,9 +91,9 @@
             //MENSAGEM (RESULTADO):
             var msg = window.document.getElementById("msg");
 
-            //IMAGEM EM JS:
+            //IMAGEM EM JS (DINÂMICA): 
             var img = window.document.createElement("img");
-            img.setAttribute("id", "foto")
+            img.setAttribute("id", "foto");
 
             if(anoForm.value.length == 0 || Number(anoForm.value) > anoAtual){
                 window.alert("[ERRO] Verifique os dados e tente novamente!");
@@ -108,12 +108,16 @@
 
                     if(idade >= 0 && idade < 10){
                         //Criança:
+                        img.setAttribute("src", "assets/homem-bebe.jpg")
                     } else if(idade < 21){
                         //Jovem:
+                        img.setAttribute("src", "assets/homem-jovem.jpg")
                     } else if(idade < 60){
                         //Adulto:
+                        img.setAttribute("src", "assets/homem-adulto.jpg")
                     } else {
                         //Idoso:
+                        img.setAttribute("src", "assets/homem-idoso.jpg")
                     }
 
 
@@ -122,16 +126,21 @@
 
                     if(idade >= 0 && idade < 10){
                         //Criança:
+                        img.setAttribute("src", "assets/mulher-bebe.jpg")
                     } else if(idade < 21){
                         //Jovem:
+                        img.setAttribute("src", "assets/mulher-jovem.jpg")
                     } else if(idade < 60){
                         //Adulto:
+                        img.setAttribute("src", "assets/mulher-adulta.jpg")
                     } else {
                         //Idoso:
+                        img.setAttribute("src", "assets/mulher-idosa.jpg")
                     }
 
                 }
                 msg.innerHTML = `Detectado ${genero} de ${idade} anos.`;
+                msg.appendChild(img) //Obs: Para acrescentar dentro da mensagem: msn a imagem: img 
 
             }
         }
