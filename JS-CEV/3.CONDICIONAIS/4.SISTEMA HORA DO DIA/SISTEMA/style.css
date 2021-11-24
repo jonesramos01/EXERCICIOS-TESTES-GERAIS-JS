@@ -13,7 +13,7 @@ section{
     background-color: white;
 
     width: 350px;
-    height: 250px;
+    /*height: 250px; Não colocar height deixa a altura dinâmica! (cresce dinamicamente)*/
 
     /*line-height: ;*/
 

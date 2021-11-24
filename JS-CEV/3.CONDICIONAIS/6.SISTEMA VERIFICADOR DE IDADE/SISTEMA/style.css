@@ -1,0 +1,30 @@
+body{
+    background-color: rgba(0, 125, 255, 0.900);
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+header{
+    color: white;
+
+}
+section{
+    background-color: white;
+
+    width: 450px;
+    /*height: 450px; Não colocar height deixa a altura dinâmica! (cresce dinamicamente)*/
+
+    margin: auto;
+    padding: 15px;
+
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.500);
+    border-radius: 15px;
+
+    line-height: 35px;
+
+
+}
+footer{
+    color: white;
+    font-style: italic;
+}
