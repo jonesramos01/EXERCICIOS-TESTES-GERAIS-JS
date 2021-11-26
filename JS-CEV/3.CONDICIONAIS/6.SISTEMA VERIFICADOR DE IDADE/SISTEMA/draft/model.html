@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISTEMA VERIFICADOR DE IDADE</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!--ÁREA DE ESTILO:-->
+<!--     
+    <style>
+        body{
+            background-color: rgba(0, 125, 255, 0.900);
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+        header{
+            color: white;
+
+        }
+        section{
+            background-color: white;
+
+            width: 450px;
+            /*height: 450px; Não colocar height deixa a altura dinâmica! (cresce dinamicamente)*/
+
+            margin: auto;
+            padding: 15px;
+
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.500);
+            border-radius: 15px;
+
+            line-height: 35px;
+
+
+        }
+        footer{
+            color: white;
+            font-style: italic;
+        }
+    </style>
+-->    
+</head>
+<body onload="carregar()">
+    <header>
+        <h1>VERIFICADOR DE IDADE</h1>
+    </header>
+
+    <section>
+        <div id="dados">
+            <p>Ano de Nascimento: 
+                <input type="number" name="txtano" id="txtano">
+            </p>
+
+            <p>Sexo: 
+                <input type="radio" name="radsex" id="masc" checked>
+                <label for="masc">Masculino</label>
+
+                <input type="radio" name="radsex" id="fem">    
+                <label for="fem">Feminino</label>
+            </p>
+                
+            <p>
+                <input type="button" value="Verificar" onclick="verificar()">
+            </p>
+            
+        </div>
+        
+        <div id="msg">
+            Por favor, preencha os dados a cima!
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; verificadordeidade</p>
+    </footer>
+    <!--ÁREA DE SCRIPT:-->
+<!--     
+    <script>
+        function verificar(){
+            //alert("Função verificar ok!"); //Testar botão
+
+            //DATA ATUAL:
+            var dataAtual = new Date();
+            var anoAtual = dataAtual.getFullYear();
+
+            //DATA DO FORMULÁRIO:
+            var anoForm = window.document.getElementById("txtano");
+
+            //MENSAGEM (RESULTADO):
+            var msg = window.document.getElementById("msg");
+
+            //IMAGEM EM JS (DINÂMICA): 
+            var img = window.document.createElement("img");
+            img.setAttribute("id", "foto");
+
+            if(anoForm.value.length == 0 || Number(anoForm.value) > anoAtual){
+                window.alert("[ERRO] Verifique os dados e tente novamente!");
+            } else {
+                var sexForm = window.document.getElementsByName("radsex");
+                var idade = anoAtual - Number(anoForm.value);
+                //msg.innerHTML = `Idade calculada: ${idade}`; //Teste cálculo
+
+                var genero = "";
+                if(sexForm[0].checked){
+                    genero = "Homem";
+
+                    if(idade >= 0 && idade < 10){
+                        //Criança:
+                        img.setAttribute("src", "assets/homem-bebe.jpg")
+                    } else if(idade < 21){
+                        //Jovem:
+                        img.setAttribute("src", "assets/homem-jovem.jpg")
+                    } else if(idade < 60){
+                        //Adulto:
+                        img.setAttribute("src", "assets/homem-adulto.jpg")
+                    } else {
+                        //Idoso:
+                        img.setAttribute("src", "assets/homem-idoso.jpg")
+                    }
+
+
+                } else if(sexForm[1].checked) {
+                    genero = "Mulher";
+
+                    if(idade >= 0 && idade < 10){
+                        //Criança:
+                        img.setAttribute("src", "assets/mulher-bebe.jpg")
+                    } else if(idade < 21){
+                        //Jovem:
+                        img.setAttribute("src", "assets/mulher-jovem.jpg")
+                    } else if(idade < 60){
+                        //Adulto:
+                        img.setAttribute("src", "assets/mulher-adulta.jpg")
+                    } else {
+                        //Idoso:
+                        img.setAttribute("src", "assets/mulher-idosa.jpg")
+                    }
+
+                }
+                msg.innerHTML = `Detectado ${genero} de ${idade} anos.`;
+                msg.appendChild(img) //Obs: Para acrescentar dentro da mensagem: msn a imagem: img 
+
+            }
+        }
+
+    </script>
+-->    
+    <script src="script.js"></script>
+</body>
+</html>

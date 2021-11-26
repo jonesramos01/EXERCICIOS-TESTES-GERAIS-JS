@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VERIFICADOR DE IDADE</title>
+    <!--
+    <link rel="stylesheet" type="text/css" href="style.css">
+    -->
+    <style>
+        body{
+            text-align: center;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        section{
+            border: solid black;
+            border-radius: 15px;
+            margin: auto;
+            padding: 15px;
+            width: 400px;
+        }
+    </style>    
+</head>
+<body onload="carregar()">
+    <header>
+        <h1>VERIFICADOR DE IDADE</h1>
+    </header>
+
+    <section>
+        <div id="dados">
+            <p>
+                Ano de Nascimento: <input type="number" name="txtano" id="txtano">
+            </p>
+            <p>
+                Sexo: 
+                <input type="radio" name="radsex" id="masc" checked>
+                <label for="masc">Masculino</label>
+                <input type="radio" name="radsex" id="fem">
+                <label for="fem">Feminino</label>
+            </p>
+            <p>
+                <input type="button" value="Verificar" onclick="verificar()">
+            </p>
+        </div>
+
+        <div id="res">
+            Por favor, entre com os dados a cima!
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; verificadordeidade</p>
+    </footer>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
